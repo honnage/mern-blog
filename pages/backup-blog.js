@@ -3,8 +3,7 @@ import Script from 'next/Script'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import LayoutBlog from '../components/testLayoutBlog'
-import BackendBlog from '../components/page/backupBlog'
-// import HeaderBlog from '../components/layout/headerBlog'
+import BackendBlog from '../components/content/backupBlog'
 
 export default function Home() {
     return (
@@ -20,7 +19,6 @@ export default function Home() {
             </Head>
 
             <LayoutBlog>
-                {/* <HeaderBlog /> */}
                 <BackendBlog />
             </LayoutBlog>
 

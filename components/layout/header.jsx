@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function header() {
+export default function Header() {
   return (
     <>
     <header
@@ -11,25 +11,42 @@ export default function header() {
         <div className="row justify-content-center align-items-center">
           <div className="col-xl-11 d-flex align-items-center justify-content-between">
             <h1 className="logo">
-              <a href="/backup">BizPage</a>
+              <a href="/">WonderWash</a>
             </h1>
 
             <nav id="navbar" className="navbar">
               <ul>
                 <li>
                   <a className="nav-link scrollto active" href="#hero">
-                    Home
+                    หน้าหลัก
                   </a>
                 </li>
                 <li>
                   <a className="nav-link scrollto" href="#about">
-                    About
+                    เกี่ยวกับเรา
                   </a>
                 </li>
                 <li>
                   <a className="nav-link scrollto" href="#services">
-                    Services
+                    บริการ
                   </a>
+                </li>
+                <li className="dropdown">
+                  <a href="#">
+                    <span>ผลิตภัณฑ์</span>{" "}
+                    <i className="bi bi-chevron-down"></i>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="#">เครื่องซัก-อบผ้า อุตสาหกรรม</a>
+                    </li>
+                    <li>
+                      <a href="#">ระบบบริหารจัดการร้าน PANDATA</a>
+                    </li>
+                    <li>
+                      <a href="#">เครื่อง Central Payment และ เครื่องจำหน่ายสินค้า</a>
+                    </li>
+                  </ul>
                 </li>
                 <li>
                   <a className="nav-link scrollto " href="#portfolio">
@@ -38,38 +55,17 @@ export default function header() {
                 </li>
                 <li>
                   <a className="nav-link scrollto" href="#team">
-                    Team
+                    แฟรนไชส์
                   </a>
                 </li>
                 <li>
                   <a className="nav-link  " href="/backup-blog">
-                    Blog
+                    บทความ
                   </a>
-                </li>
-                <li className="dropdown">
-                  <a href="#">
-                    <span>Drop Down</span>{" "}
-                    <i className="bi bi-chevron-down"></i>
-                  </a>
-                  <ul>
-                    <li>
-                      <a href="#">Drop Down 1</a>
-                    </li>
-                  
-                    <li>
-                      <a href="#">Drop Down 2</a>
-                    </li>
-                    <li>
-                      <a href="#">Drop Down 3</a>
-                    </li>
-                    <li>
-                      <a href="#">Drop Down 4</a>
-                    </li>
-                  </ul>
                 </li>
                 <li>
                   <a className="nav-link scrollto" href="#contact">
-                    Contact
+                    ติดต่อเรา
                   </a>
                 </li>
               </ul>

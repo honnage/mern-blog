@@ -2,8 +2,8 @@ import Head from 'next/head'
 import Script from 'next/Script'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Layout from '../components/testLayout'
-import BackupContent from '../components/page/backupContent'
+import Layout from '../components/layout'
+import BackupContent from '../components/content/backupContent'
 
 export default function Home() {
   return (
