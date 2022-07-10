@@ -22,6 +22,11 @@ export default function Home() {
 
       <Script src="assets/js/main.js"></Script>
 
+      <Script src="https://unpkg.com/aos@next/dist/aos.js"></Script>
+      <Script>
+        AOS.init();
+      </Script>
+
 
     </>
 

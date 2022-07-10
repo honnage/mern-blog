@@ -45,6 +45,8 @@ class MyDocument extends Document {
                     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
                     <link href="assets/css/style.css" rel="stylesheet" />
+
+                    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"  />
                 </Head>
                 <body>
                     <Main />
