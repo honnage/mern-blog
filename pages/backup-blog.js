@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Script from 'next/Script'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import LayoutBlog from '../components/layoutBlog'
+import LayoutBlog from '../components/testLayoutBlog'
 import BackendBlog from '../components/page/backupBlog'
 // import HeaderBlog from '../components/layout/headerBlog'
 

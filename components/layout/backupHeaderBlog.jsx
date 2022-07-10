@@ -54,7 +54,7 @@ export default function backupHeaderBlog() {
                       <li>
                         <a href="#">Drop Down 1</a>
                       </li>
-                      <li className="dropdown">
+                      {/* <li className="dropdown">
                         <a href="#">
                           <span>Deep Drop Down</span>{" "}
                           <i className="bi bi-chevron-right" />
@@ -76,7 +76,7 @@ export default function backupHeaderBlog() {
                             <a href="#">Deep Drop Down 5</a>
                           </li>
                         </ul>
-                      </li>
+                      </li> */}
                       <li>
                         <a href="#">Drop Down 2</a>
                       </li>
