@@ -1,8 +1,9 @@
 import React from "react";
 
-export default function ContentIndex() {
+export default function backupContent() {
   return (
     <>
+      {/* ======= Hero Us Section ======= */}
       <section id="hero">
         <div className="hero-container">
           <div
@@ -179,6 +180,7 @@ export default function ContentIndex() {
           </div>
         </div>
       </section>
+      {/* End Hero Us Section */}
 
       {/* ======= Featured Services Section Section ======= */}
       <section id="featured-services">
@@ -1242,6 +1244,7 @@ export default function ContentIndex() {
         </div>
       </section>
       {/* End Team Section */}
+
       {/* ======= Contact Section ======= */}
       <section id="contact" className="section-bg">
         <div className="container" data-aos="fade-up">

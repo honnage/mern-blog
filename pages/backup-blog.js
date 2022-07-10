@@ -2,19 +2,27 @@ import Head from 'next/head'
 import Script from 'next/Script'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Layout from '../components/layout'
-import BackupContent from '../components/page/backupContent'
+import LayoutBlog from '../components/layoutBlog'
+import BackendBlog from '../components/page/backupBlog'
+// import HeaderBlog from '../components/layout/headerBlog'
 
 export default function Home() {
     return (
         <>
             <Head>
-                <title>Backup - page</title>
+                <meta charset="utf-8" />
+                <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+                <title>backup blog - page</title>
+
+                <meta content="" name="description" />
+                <meta content="" name="keywords" />
             </Head>
 
-            <Layout>
-                <BackupContent />
-            </Layout>
+            <LayoutBlog>
+                {/* <HeaderBlog /> */}
+                <BackendBlog />
+            </LayoutBlog>
 
             <Script src="assets/vendor/purecounter/purecounter.js"></Script>
             <Script src="assets/vendor/aos/aos.js"></Script>

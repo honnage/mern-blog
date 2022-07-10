@@ -1,8 +1,9 @@
+import Head from 'next/head'
 import Script from 'next/Script'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import ContentBackup from '../components/page/content_backup'
-import Head from 'next/head'
+import Layout from '../components/layout'
+import BackupContent from '../components/page/backupContent'
 
 export default function Home() {
   return (
@@ -10,7 +11,11 @@ export default function Home() {
       <Head>
         <title>Index - page</title>
       </Head>
-      <ContentBackup />
+
+      <Layout>
+        <BackupContent />
+      </Layout>
+
       <Script src="assets/vendor/purecounter/purecounter.js"></Script>
       <Script src="assets/vendor/aos/aos.js"></Script>
       <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></Script>
@@ -19,7 +24,6 @@ export default function Home() {
       <Script src="assets/vendor/swiper/swiper-bundle.min.js"></Script>
       <Script src="assets/vendor/waypoints/noframework.waypoints.js"></Script>
       <Script src="assets/vendor/php-email-form/validate.js"></Script>
-
 
       <Script src="assets/js/main.js"></Script>
 

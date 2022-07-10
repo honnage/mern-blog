@@ -60,7 +60,6 @@ class MyDocument extends Document {
                     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
                     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
                     <script src="assets/vendor/php-email-form/validate.js"></script>
-
                 </body>
             </Html>
         );

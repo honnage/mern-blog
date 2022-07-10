@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header() {
+export default function backupHeader() {
   return (
     <>
       <header
@@ -11,7 +11,7 @@ export default function Header() {
           <div className="row justify-content-center align-items-center">
             <div className="col-xl-11 d-flex align-items-center justify-content-between">
               <h1 className="logo">
-                <a href="/">BizPage</a>
+                <a href="/backup">BizPage</a>
               </h1>
 
               <nav id="navbar" className="navbar">
@@ -42,7 +42,7 @@ export default function Header() {
                     </a>
                   </li>
                   <li>
-                    <a className="nav-link  " href="blog.html">
+                    <a className="nav-link  " href="/backup-blog">
                       Blog
                     </a>
                   </li>
@@ -55,29 +55,7 @@ export default function Header() {
                       <li>
                         <a href="#">Drop Down 1</a>
                       </li>
-                      {/* <li className="dropdown">
-                        <a href="#">
-                          <span>Deep Drop Down</span>{" "}
-                          <i className="bi bi-chevron-right"></i>
-                        </a>
-                        <ul>
-                          <li>
-                            <a href="#">Deep Drop Down 1</a>
-                          </li>
-                          <li>
-                            <a href="#">Deep Drop Down 2</a>
-                          </li>
-                          <li>
-                            <a href="#">Deep Drop Down 3</a>
-                          </li>
-                          <li>
-                            <a href="#">Deep Drop Down 4</a>
-                          </li>
-                          <li>
-                            <a href="#">Deep Drop Down 5</a>
-                          </li>
-                        </ul>
-                      </li> */}
+                    
                       <li>
                         <a href="#">Drop Down 2</a>
                       </li>
@@ -101,11 +79,6 @@ export default function Header() {
           </div>
         </div>
       </header>
-
- 
-
-
-
     </>
   );
 }
