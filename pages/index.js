@@ -1,15 +1,16 @@
-
 import Script from 'next/Script'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import ContentIndex from '../components/Page/ContentIndex'
+import ContentBackup from '../components/page/content_backup'
+import Head from 'next/head'
 
 export default function Home() {
   return (
     <>
-      <ContentIndex />
-
-
+      <Head>
+        <title>Index - page</title>
+      </Head>
+      <ContentBackup />
       <Script src="assets/vendor/purecounter/purecounter.js"></Script>
       <Script src="assets/vendor/aos/aos.js"></Script>
       <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></Script>
@@ -26,10 +27,6 @@ export default function Home() {
       <Script>
         AOS.init();
       </Script>
-
-
     </>
-
-
   )
 }

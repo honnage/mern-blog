@@ -1,13 +1,11 @@
 import React from "react";
-import Footer from "./Layout/components/Footer/Footer";
-import Header from "./Layout/components/Header/Header";
+import Footer from "./layout/footer";
+import Header from "./layout/header";
 
 export default function Layout({ children }) {
   return (
     <>
       <Header />
-    
-
       {children}
       <a
         href="#"

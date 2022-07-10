@@ -42,11 +42,12 @@ class MyDocument extends Document {
                     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
                     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
                     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-                    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+                    {/* <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" /> */}
 
                     <link href="assets/css/style.css" rel="stylesheet" />
 
                     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"  />
+                    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
                 </Head>
                 <body>
                     <Main />
@@ -60,7 +61,6 @@ class MyDocument extends Document {
                     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
                     <script src="assets/vendor/php-email-form/validate.js"></script>
 
-                    {/* <script src="assets/js/main.js"></script> */}
                 </body>
             </Html>
         );
