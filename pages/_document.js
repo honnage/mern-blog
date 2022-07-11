@@ -23,15 +23,6 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <meta charset="utf-8" />
-                    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-                    {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
-
-                    <title>BizPage Bootstrap Template</title>
-
-                    <meta content="" name="description" />
-                    <meta content="" name="keywords" />
-
                     <link href="assets/img/favicon.png" rel="icon" />
                     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
@@ -46,8 +37,8 @@ class MyDocument extends Document {
 
                     <link href="assets/css/style.css" rel="stylesheet" />
 
-                    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"  />
-                    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+                    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+                    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
                 </Head>
                 <body>
                     <Main />
@@ -60,6 +51,12 @@ class MyDocument extends Document {
                     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
                     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
                     <script src="assets/vendor/php-email-form/validate.js"></script>
+
+                    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+                    <script>
+                        AOS.init();
+                    </script>
+
                 </body>
             </Html>
         );

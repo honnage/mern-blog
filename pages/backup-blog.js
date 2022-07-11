@@ -31,12 +31,12 @@ export default function Home() {
             <Script src="assets/vendor/waypoints/noframework.waypoints.js"></Script>
             <Script src="assets/vendor/php-email-form/validate.js"></Script>
 
-            <Script src="assets/js/main.js"></Script>
-
             <Script src="https://unpkg.com/aos@next/dist/aos.js"></Script>
             <Script>
                 AOS.init();
             </Script>
+
+            <Script src="assets/js/main.js"></Script>
         </>
     )
 }
