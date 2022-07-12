@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function facts() {
+export default function Facts() {
   return (
     <>
       {/* ======= Facts Section ======= */}

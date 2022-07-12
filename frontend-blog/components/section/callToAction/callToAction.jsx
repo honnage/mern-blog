@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function callToAction() {
+export default function CallToAction() {
   return (
     <>
       {/* ======= Call To Action Section ======= */}

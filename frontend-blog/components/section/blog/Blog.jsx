@@ -1,21 +1,8 @@
 import React from "react";
 
-export default function backupBlog() {
+export default function Blog() {
   return (
     <>
-      {/* ======= Breadcrumbs ======= */}
-      <section id="breadcrumbs" className="breadcrumbs">
-        <div className="container">
-          <ol>
-            <li>
-              <a href="index.html">Home</a>
-            </li>
-          </ol>
-          <h2>Blog</h2>
-        </div>
-      </section>
-      {/* End Breadcrumbs */}
-
       {/* ======= Blog Section ======= */}
       <section id="blog" className="blog">
         <div className="container" data-aos="fade-up">

@@ -3,7 +3,9 @@ import Script from 'next/Script'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import LayoutBlog from '../components/testLayoutBlog'
-import BackendBlog from '../components/content/backupBlog'
+import Breadcrumbs from '../components/section/breadcrumbs/Breadcrumbs'
+import Blog from '../components/section/blog/Blog'
+
 
 export default function Home() {
     return (
@@ -19,8 +21,10 @@ export default function Home() {
             </Head>
 
             <LayoutBlog>
-                <BackendBlog />
+                <Breadcrumbs />
+                <Blog />
             </LayoutBlog>
+
 
             <Script src="assets/vendor/purecounter/purecounter.js"></Script>
             <Script src="assets/vendor/aos/aos.js"></Script>

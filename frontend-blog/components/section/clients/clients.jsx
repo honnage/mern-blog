@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function clients() {
+export default function Clients() {
   return (
     <>
       {/* ======= Our Clients Section ======= */}

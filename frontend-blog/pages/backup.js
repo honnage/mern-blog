@@ -3,7 +3,18 @@ import Script from 'next/Script'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/testLayout'
-import BackupContent from '../components/content/backupContent'
+import Hero from '../components/section/hero/Hero'
+import FeaturedServices from '../components/section/featuredServices/featuredServices'
+import About from '../components/section/about/about'
+import Services from '../components/section/services/services'
+import CallToAction from '../components/section/callToAction/callToAction'
+import Skills from '../components/section/skills/skills'
+import Facts from '../components/section/facts/facts'
+import Portfolio from '../components/section/portfolio/portfolio'
+import Clients from '../components/section/clients/clients'
+import Testimonials from '../components/section/testimonials/testimonials'
+import Team from '../components/section/team/team'
+import Contact from '../components/section/contact/contact'
 
 export default function Home() {
     return (
@@ -13,7 +24,18 @@ export default function Home() {
             </Head>
 
             <Layout>
-                <BackupContent />
+                <Hero />
+                <FeaturedServices />
+                <About />
+                <Services />
+                <CallToAction />
+                <Skills />
+                <Facts />
+                <Portfolio />
+                <Clients />
+                <Testimonials />
+                <Team />
+                <Contact />
             </Layout>
 
             <Script src="assets/vendor/purecounter/purecounter.js"></Script>

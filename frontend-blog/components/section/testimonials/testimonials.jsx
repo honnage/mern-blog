@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function testimonials() {
+export default function Testimonials() {
   return (
     <>
       {/* ======= Testimonials Section ======= */}
