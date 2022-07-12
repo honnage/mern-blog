@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function featuredServices() {
+export default function FeaturedServices() {
   return (
     <>
       {/* ======= Featured Services Section Section ======= */}
