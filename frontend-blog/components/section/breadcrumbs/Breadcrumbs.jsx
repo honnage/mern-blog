@@ -3,6 +3,7 @@ import React from "react";
 export default function Breadcrumbs() {
   return (
     <>
+      {/* for blog page */}
       {/* ======= Breadcrumbs ======= */}
       <section id="breadcrumbs" className="breadcrumbs">
         <div className="container">

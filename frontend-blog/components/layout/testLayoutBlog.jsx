@@ -1,11 +1,11 @@
 import React from "react";
-import Footer from "./layout/footer";
-import Header from "./layout/header";
+import Footer from "./Footer/backupFooter";
+import HeaderBlog from "./Header/backupHeaderBlog";
 
-export default function Layout({ children }) {
+export default function LayoutBlog({ children }) {
   return (
     <>
-      <Header />
+      <HeaderBlog />
       {children}
       <a
         href="#"

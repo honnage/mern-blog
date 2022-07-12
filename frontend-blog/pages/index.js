@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Script from 'next/Script'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
 import Hero from '../components/section/hero/Hero'
 import FeaturedServices from '../components/section/featuredServices/featuredServices'
 import About from '../components/section/about/about'
@@ -15,6 +15,7 @@ import Clients from '../components/section/clients/clients'
 import Testimonials from '../components/section/testimonials/testimonials'
 import Team from '../components/section/team/team'
 import Contact from '../components/section/contact/contact'
+import BlogList from '../components/section/blogList/BlogList'
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <Layout>
         <Hero />
         <FeaturedServices />
+        <BlogList />
         <About />
         <Services />
         <CallToAction />

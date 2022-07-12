@@ -3,6 +3,7 @@ import React from "react";
 export default function Blog() {
   return (
     <>
+      {/* for blog page */}
       {/* ======= Blog Section ======= */}
       <section id="blog" className="blog">
         <div className="container" data-aos="fade-up">

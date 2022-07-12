@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "./layout/backupFooter";
-import Header from "./layout/backupHeader";
+import Footer from "./Footer/footer";
+import Header from "./Header/header";
 
 export default function Layout({ children }) {
   return (
