@@ -3,7 +3,8 @@ import Script from 'next/Script'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/layout'
-import BackupContent from '../components/content/backupContent'
+import Hero from '../components/section/hero/hero'
+import FeaturedServices from '../components/section//featuredServices/featuredServices'
 
 export default function Home() {
   return (
@@ -13,7 +14,8 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <BackupContent />
+        <Hero />
+        <FeaturedServices />
       </Layout>
 
       <Script src="assets/vendor/purecounter/purecounter.js"></Script>
