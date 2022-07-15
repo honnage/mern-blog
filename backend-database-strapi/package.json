@@ -11,16 +11,16 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.2.3",
-    "@strapi/plugin-users-permissions": "4.2.3",
-    "@strapi/plugin-i18n": "4.2.3",
-    "mysql": "2.18.1"
+    "@strapi/strapi": "4.2.2",
+    "@strapi/plugin-users-permissions": "4.2.2",
+    "@strapi/plugin-i18n": "4.2.2",
+    "better-sqlite3": "7.4.6"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "220260bf-5069-4e61-9a12-eae8293a3fa5"
+    "uuid": "da808374-5e27-43c1-aba8-89e42a6d65a2"
   },
   "engines": {
     "node": ">=12.x.x <=16.x.x",

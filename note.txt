@@ -1,3 +1,6 @@
 npm i -g @sanity/cli
 
 npx create-strapi-app backend-strapi --quickstart
+npx create-strapi-app backend-strapi สำหรับ custom database
+
+database: blog-ww
