@@ -5,6 +5,10 @@ import styles from '../styles/Home.module.css'
 import LayoutBlog from '../components/layout/testLayoutBlog'
 import Breadcrumbs from '../components/section/breadcrumbs/Breadcrumbs'
 import Blog from '../components/section/blog/Blog'
+import TestBlogList from '../components/section/test/test'
+
+
+
 
 
 export default function Home() {
@@ -14,7 +18,7 @@ export default function Home() {
                 <meta charSet="utf-8" />
                 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-                <title>backup blog - page</title>
+                <title>Test</title>
 
                 <meta content="" name="description" />
                 <meta content="" name="keywords" />
@@ -22,7 +26,8 @@ export default function Home() {
 
             <LayoutBlog>
                 <Breadcrumbs />
-                <Blog />
+                <TestBlogList />
+
             </LayoutBlog>
 
 
