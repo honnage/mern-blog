@@ -13,9 +13,6 @@ export default function BlogList() {
           </header>
           <div className="row about-cols">
            <Blog />
-           <Blog />
-           <Blog />
-
           </div>
         </div>
       </section>

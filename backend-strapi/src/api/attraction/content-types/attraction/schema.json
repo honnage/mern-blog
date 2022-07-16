@@ -4,7 +4,8 @@
   "info": {
     "singularName": "attraction",
     "pluralName": "attractions",
-    "displayName": "Attraction"
+    "displayName": "Attraction",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,20 +19,26 @@
       "type": "string"
     },
     "cover_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "latitude": {
       "type": "float"
     },
     "longitude": {
       "type": "float"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
     }
   }
 }

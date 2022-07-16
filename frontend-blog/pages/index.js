@@ -17,6 +17,7 @@ import Team from '../components/section/team/team'
 import Contact from '../components/section/contact/contact'
 import BlogList from '../components/section/blogList/BlogList'
 
+
 export default function Home() {
   return (
     <>
