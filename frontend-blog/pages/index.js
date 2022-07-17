@@ -29,7 +29,7 @@ export default function Home() {
         <Hero />
         <FeaturedServices />
         <BlogList />
-        <About />
+        {/* <About /> */}
         <Services />
         <CallToAction />
         <Skills />
