@@ -12,10 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string",
-      "required": true
-    },
     "seo_title": {
       "type": "string",
       "required": true
@@ -42,6 +38,10 @@
     },
     "content": {
       "type": "richtext",
+      "required": true
+    },
+    "name": {
+      "type": "string",
       "required": true
     }
   }

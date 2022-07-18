@@ -6,7 +6,10 @@ import LayoutBlog from '../components/layout/testLayoutBlog'
 import Breadcrumbs from '../components/section/breadcrumbs/Breadcrumbs'
 import { useState, useEffect } from "react"
 import { api } from "../lib/constants"
+
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+
 
 
 export default function Home() {
@@ -22,8 +25,9 @@ export default function Home() {
             });
     }, []);
 
-    console.log(attractions)
-
+    const markdown = {
+        description: "<p>Hello from the other </p>\n<p><strong>side</strong></p>"
+      }
 
     return (
         <>
@@ -31,10 +35,10 @@ export default function Home() {
                 <meta charSet="utf-8" />
                 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-                <title>Test</title>
+                <title>{attractions.attributes?.seo_title}</title>
 
-                <meta content="" name="description" />
-                <meta content="" name="keywords" />
+                <meta content={attractions.attributes?.seo_description} name="description" />
+                <meta content={attractions.attributes?.seo_keywords} name="keywords" />
             </Head>
 
             <LayoutBlog>
@@ -54,7 +58,10 @@ export default function Home() {
                     <hr />
                     <p>ReactMarkdown</p>
                     <ReactMarkdown >{attractions.attributes?.content}</ReactMarkdown>
-                    <br />
+                    
+                    <hr />
+                    <p>Markdown + HTML</p>
+                    <ReactMarkdown children={attractions.attributes?.content} rehypePlugins={[rehypeRaw]} />
 
 
                 </section>
