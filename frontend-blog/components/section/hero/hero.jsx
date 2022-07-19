@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { api } from "../../../lib/constants";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 export default function Hero() {
+  const [API_data_1, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(api.LOCALHOST + "/api/section-carousels/1?populate=cover_image")
+      .then((res) => res.json())
+      .then((result) => {
+        setData(result.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
+  const img = "http://localhost:1337/uploads/bg2_288f3e6648.jpg";
+
   return (
     <>
       {/* ======= Hero Us Section ======= */}
@@ -42,23 +60,21 @@ export default function Hero() {
                 </div>
               </div>
 
+              
               <div
                 className="carousel-item"
                 style={{
-                  backgroundImage: "url(assets/img/hero-carousel/2.jpg)",
+                  // backgroundImage: `url('${api.LOCALHOST + API_data_1.attributes?.cover_image.data.attributes.url}')`,
+                  backgroundImage: `url('${ api.LOCALHOST + API_data_1.attributes?.cover_image.data.attributes.url}')`,
                 }}
               >
                 <div className="carousel-container">
                   <div className="container">
                     <h2 className="animate__animated animate__fadeInDown">
-                      At vero eos et accusamus
+                      {API_data_1.attributes?.title}
                     </h2>
                     <p className="animate__animated animate__fadeInUp">
-                      Nam libero tempore, cum soluta nobis est eligendi optio
-                      cumque nihil impedit quo minus id quod maxime placeat
-                      facere possimus, omnis voluptas assumenda est, omnis dolor
-                      repellendus. Temporibus autem quibusdam et aut officiis
-                      debitis aut.
+                      {API_data_1.attributes?.description}
                     </p>
                     <a
                       href="#featured-services"

@@ -25,9 +25,6 @@ export default function Home() {
             });
     }, []);
 
-    const markdown = {
-        description: "<p>Hello from the other </p>\n<p><strong>side</strong></p>"
-      }
 
     return (
         <>
