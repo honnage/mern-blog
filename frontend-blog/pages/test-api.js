@@ -55,7 +55,7 @@ export default function Home() {
                     <hr />
                     <p>ReactMarkdown</p>
                     <ReactMarkdown >{attractions.attributes?.content}</ReactMarkdown>
-                    
+
                     <hr />
                     <p>Markdown + HTML</p>
                     <ReactMarkdown children={attractions.attributes?.content} rehypePlugins={[rehypeRaw]} />

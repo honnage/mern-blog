@@ -17,6 +17,7 @@ import Team from '../components/section/team/team'
 import Contact from '../components/section/contact/contact'
 import BlogList from '../components/section/blogList/BlogList'
 
+
 export default function Home() {
   return (
     <>
@@ -48,6 +49,11 @@ export default function Home() {
       <Script src="assets/vendor/swiper/swiper-bundle.min.js"></Script>
       <Script src="assets/vendor/waypoints/noframework.waypoints.js"></Script>
       <Script src="assets/vendor/php-email-form/validate.js"></Script>
+
+      <Script src="https://unpkg.com/aos@next/dist/aos.js"></Script>
+      <Script>
+        AOS.init();
+      </Script>
 
       <Script src="assets/js/main.js"></Script>
     </>

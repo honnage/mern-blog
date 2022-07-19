@@ -5,7 +5,7 @@ import { api } from "../lib/constants";
 export default function attraction() {
     // const [attractions, setAttractions] = useState([])
     const [items, SetItems] = useState([])
-    
+
     useEffect(() => {
         fetch(api.LOCALHOST + '/api/attractions?populate=cover_image')
             .then(res => res.json())
@@ -31,7 +31,7 @@ export default function attraction() {
                                     <Card.Body>
                                         <Card.Title>{item.attributes.name}</Card.Title>
                                         <Card.Text className="text-truncate">
-                                            {item.attributes.detail}
+                                            {itemitem.attributes.detail}
                                         </Card.Text>
                                         <Button variant="primary">Go somewhere</Button>
                                     </Card.Body>
