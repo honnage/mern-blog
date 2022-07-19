@@ -3,14 +3,15 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { api } from "../lib/constants";
 
 export default function attraction() {
-    const [attractions, setAttractions] = useState([])
+    // const [attractions, setAttractions] = useState([])
+    const [items, SetItems] = useState([])
     
     useEffect(() => {
         fetch(api.LOCALHOST + '/api/attractions?populate=cover_image')
             .then(res => res.json())
             .then(
                 (result) => {
-                    setAttractions(result.data);
+                    SetItems(result.data);
                 },
             )
             .catch(function(error) {
@@ -23,14 +24,14 @@ export default function attraction() {
             <div>
                 <Container>
                     <Row>
-                        {attractions.map(attraction => (
-                            <Col sm={4} key={attraction.id}>
+                        {items.map(item => (
+                            <Col sm={4} key={item.id}>
                                 <Card style={{ width: "100%" }}>
-                                    <Card.Img variant="top" src={api.LOCALHOST + attraction.attributes.cover_image.data.attributes.url} />
+                                    <Card.Img variant="top" src={api.LOCALHOST + item.attributes.cover_image.data.attributes.url} />
                                     <Card.Body>
-                                        <Card.Title>{attraction.attributes.name}</Card.Title>
+                                        <Card.Title>{item.attributes.name}</Card.Title>
                                         <Card.Text className="text-truncate">
-                                            {attraction.attributes.detail}
+                                            {item.attributes.detail}
                                         </Card.Text>
                                         <Button variant="primary">Go somewhere</Button>
                                     </Card.Body>
