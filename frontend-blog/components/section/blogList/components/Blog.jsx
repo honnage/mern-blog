@@ -4,7 +4,6 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
 export default function Blog() {
-  // const [attractions, setAttractions] = useState([]);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
