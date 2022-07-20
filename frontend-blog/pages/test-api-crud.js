@@ -8,9 +8,15 @@ import Blog from '../components/section/blog/Blog'
 import TestBlogList from '../components/section/test/Test'
 import axios from "axios";
 import { useState, useEffect } from "react"
+import Loading from '../components/pagination/loading'
+
+import Box from '@mui/material/Box';
+import Skeleton from '@mui/material/Skeleton';
 
 export default function Home() {
     const [posts, setPosts] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+
     const apiEndPoint = 'https://jsonplaceholder.typicode.com/posts'
     useEffect(() => {
         const getPosts = async () => {
@@ -18,6 +24,7 @@ export default function Home() {
             setPosts(res)
         }
         getPosts();
+        setIsLoading(true);
     }, [])
 
     const addPost = async () => {
@@ -35,10 +42,13 @@ export default function Home() {
         setPosts(postsClone);
     }
 
-    const handleDelete = async post =>{
+    const handleDelete = async post => {
         await axios.delete(apiEndPoint + '/' + post.id + post)
         setPosts(posts.filter(p => p.id !== post.id));
     }
+
+    // console.log(posts)
+    // console.log(isLoading)
 
     return (
         <>
@@ -56,27 +66,44 @@ export default function Home() {
                 <Breadcrumbs />
 
                 <div className="container">
-                <h2>There are {posts.length} post in the datase</h2>
-                <button onClick={addPost} className="btn btn-primary">Add Post</button>
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Update</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {posts.map(post =>
-                            <tr key={post.id}>
-                                <td>{post.title}</td>
-                                <td><button onClick={() => handleUpdate(post)} className="btn btn-info btn-sm">Update</button></td>
-                                <td><button onClick={() => handleDelete(post)} className="btn btn-danger btn-sm">Delete</button></td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-            </div>
+                    <h2>There are {posts.length} post in the datase</h2>
+                    <button onClick={addPost} className="btn btn-primary">Add Post</button>
+                    <br />
+                    {posts.length == 0
+                        ? // data loading 
+                        (<div>
+                             <br />
+                            <Box sx={{ width: '100%' }}>
+                                <Skeleton />
+                                <Skeleton animation="wave" />
+                                <Skeleton animation={false} />
+                            </Box>
+                            <br />
+                        </div>
+                        )
+                        : // success data loading 
+                        (<table className="table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {posts.map(post =>
+                                    <tr key={post.id}>
+                                        <td>{post.title}</td>
+                                        <td><button onClick={() => handleUpdate(post)} className="btn btn-info btn-sm">Update</button></td>
+                                        <td><button onClick={() => handleDelete(post)} className="btn btn-danger btn-sm">Delete</button></td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>)}
+
+
+                </div>
             </LayoutBlog>
 
 

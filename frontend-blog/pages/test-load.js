@@ -21,13 +21,11 @@ export default function testload() {
                 const { body } = res
                 setData(body)
             })
-
     }, [])
 
 
     return (
         <div>
-
             <h1>testload</h1>
 
             {data ? data :
@@ -37,8 +35,6 @@ export default function testload() {
                 >
                     <CircularProgress color="inherit" />
                 </Backdrop>}
-
-
         </div>
 
     )
