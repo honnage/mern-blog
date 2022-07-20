@@ -21,20 +21,22 @@ export default function testload() {
                 const { body } = res
                 setData(body)
             })
-           
+
     }, [])
+
 
     return (
         <div>
+
             <h1>testload</h1>
 
-            {data ? data : 
-            <Backdrop
-                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                open
-            >
-                <CircularProgress color="inherit" />
-            </Backdrop>}
+            {data ? data :
+                <Backdrop
+                    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                    open
+                >
+                    <CircularProgress color="inherit" />
+                </Backdrop>}
 
 
         </div>
