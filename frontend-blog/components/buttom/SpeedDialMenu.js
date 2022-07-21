@@ -29,17 +29,6 @@ export default function SpeedDialMenu() {
     const [showModalFacebook, setModalShowFacebook] = useState(false);
     const ModalFacebookClose = () => setModalShowFacebook(false);
     const ModalFacebookShow = () => setModalShowFacebook(true);
-    const [dataFacebook, setDataFacebook] = useState([]);
-    useEffect(() => {
-        fetch(api.LOCALHOST + "/api/section-contents/1")
-            .then((res) => res.json())
-            .then((result) => {
-                setDataFacebook(result.data);
-            })
-            .catch(function (error) {
-                console.log(error)
-            });
-    }, []);
 
     {/* ==================================================================== */ }
     {/* ============================== LINE ================================ */ }
@@ -47,17 +36,7 @@ export default function SpeedDialMenu() {
     const [showModalLine, setModalShowLine] = useState(false);
     const ModalLineClose = () => setModalShowLine(false);
     const ModalLineShow = () => setModalShowLine(true);
-    const [dataLine, setDataLine] = useState([]);
-    useEffect(() => {
-        fetch(api.LOCALHOST + "/api/section-contents/2")
-            .then((res) => res.json())
-            .then((result) => {
-                setDataLine(result.data);
-            })
-            .catch(function (error) {
-                console.log(error)
-            });
-    }, []);
+
 
     {/* ==================================================================== */ }
     {/* ============================== PHONE =============================== */ }
@@ -65,12 +44,13 @@ export default function SpeedDialMenu() {
     const [showModalPhone, setModalShowPhone] = useState(false);
     const ModalPhoneClose = () => setModalShowPhone(false);
     const ModalPhoneShow = () => setModalShowPhone(true);
-    const [dataPhone, setDataPhone] = useState([]);
+
+    const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch(api.LOCALHOST + "/api/section-contents/3")
+        fetch(api.LOCALHOST + "/api/section-contents")
             .then((res) => res.json())
             .then((result) => {
-                setDataPhone(result.data);
+                setItems(result.data);
             })
             .catch(function (error) {
                 console.log(error)
@@ -100,6 +80,8 @@ export default function SpeedDialMenu() {
             Modal: ModalLineShow
         },
     ];
+
+    const arr = [1, 2, 3, 4, 5, 6];
 
     return (
         <>
@@ -135,66 +117,83 @@ export default function SpeedDialMenu() {
                         ))}
                     </SpeedDial>
                 </Box>
+
             </a>
 
             {/* ==================================================================== */}
             {/* ======================== MODAL FACEBOOK ============================ */}
             {/* ==================================================================== */}
-            <Dialog
-                open={showModalFacebook}
-                onClose={ModalFacebookClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-            >
-                <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' }}>
-                    {dataFacebook.attributes?.title}
-                </DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        <ReactMarkdown children={dataFacebook.attributes?.content} rehypePlugins={[rehypeRaw]} />
-                    </DialogContentText>
-                </DialogContent>
-            </Dialog>
 
+            {items.map(item => {
+                return item.attributes.section == 'Buttom_Facebook'
+                    ?
+                    <Dialog
+                        open={showModalFacebook}
+                        onClose={ModalFacebookClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' }}>
+                            {item.attributes.title}
+                        </DialogTitle>
+                        <DialogContent>
+                            <DialogContentText id="alert-dialog-description">
+                                <ReactMarkdown children={item.attributes.content} rehypePlugins={[rehypeRaw]} />
+                            </DialogContentText>
+                        </DialogContent>
+                    </Dialog>
+                    : null;
+            })}
 
             {/* ==================================================================== */}
             {/* =========================== MODAL LINE ============================= */}
             {/* ==================================================================== */}
-            <Dialog
-                open={showModalLine}
-                onClose={ModalLineClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-            >
-                <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' }}>
-                    {dataLine.attributes?.title}
-                </DialogTitle>
-                <DialogContent >
-                    <DialogContentText id="alert-dialog-description" >
-                        <ReactMarkdown children={dataLine.attributes?.content} rehypePlugins={[rehypeRaw]} />
-                    </DialogContentText>
-                </DialogContent>
-            </Dialog>
+            {items.map(item => {
+                return item.attributes.section == 'Buttom_Line'
+                    ?
+                    <Dialog
+                        open={showModalLine}
+                        onClose={ModalLineClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' }}>
+                            {item.attributes.title}
+                        </DialogTitle>
+                        <DialogContent >
+                            <DialogContentText id="alert-dialog-description" >
+                                <ReactMarkdown children={item.attributes.content} rehypePlugins={[rehypeRaw]} />
+                            </DialogContentText>
+                        </DialogContent>
+                    </Dialog>
+                    : null;
+            })}
 
 
             {/* ==================================================================== */}
             {/* =========================== MODAL PHONE ============================ */}
             {/* ==================================================================== */}
-            <Dialog
-                open={showModalPhone}
-                onClose={ModalPhoneClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-            >
-                <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' }}>
-                    {dataPhone.attributes?.title}
-                </DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        <ReactMarkdown children={dataPhone.attributes?.content} rehypePlugins={[rehypeRaw]} />
-                    </DialogContentText>
-                </DialogContent>
-            </Dialog>
+            {items.map(item => {
+                return item.attributes.section == 'Buttom_Phone'
+                    ?
+                    <Dialog
+                        open={showModalPhone}
+                        onClose={ModalPhoneClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' }}>
+                            {item.attributes?.title}
+                        </DialogTitle>
+                        <DialogContent>
+                            <DialogContentText id="alert-dialog-description">
+                                <ReactMarkdown children={item.attributes.content} rehypePlugins={[rehypeRaw]} />
+                            </DialogContentText>
+                        </DialogContent>
+                    </Dialog>
+                    : null;
+            })}
+
         </>
     )
 }
