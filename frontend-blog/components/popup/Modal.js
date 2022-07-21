@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 
 
 
-export default function CustomizedDialogs() {
+export default function ModalCustom() {
     const [showModal, setShowModal] = useState(false);
 
     const ModalClose = () => setShowModal(false);
