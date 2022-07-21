@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from 'react';
 import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
@@ -8,6 +8,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import ForumIcon from '@mui/icons-material/Forum';
 import PhoneIcon from '@mui/icons-material/Phone';
 import FacebookIcon from '@mui/icons-material/Facebook';
+
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
 
 const actions = [
     { icon: <FacebookIcon />, name: "FACEBOOK", bgcolor: "#0353a4", bgcollorhover: '#006daa' },
@@ -20,6 +24,10 @@ export default function SpeedDialMenu() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const [showModal, setModalShow] = useState(false);
+    const ModalClose = () => setModalShow(false);
+    const ModalShow = () => setModalShow(true);
+
     return (
         <>
             <a className="btn-custom" >
@@ -28,7 +36,7 @@ export default function SpeedDialMenu() {
                         ariaLabel="SpeedDial controlled open example"
                         sx={{ position: "absolute", bottom: 10, right: 0 }}
                         // icon={<SpeedDialIcon />}
-                         icon={<SpeedDialIcon  icon={<ForumIcon />}  openIcon={<CloseIcon />} /> }
+                        icon={<SpeedDialIcon icon={<ForumIcon />} openIcon={<CloseIcon />} />}
                         onClose={handleClose}
                         onOpen={handleOpen}
                         open={open}
@@ -38,7 +46,7 @@ export default function SpeedDialMenu() {
                                 key={action.name}
                                 icon={action.icon}
                                 tooltipTitle={action.name}
-                                onClick={handleClose}
+                                onClick={ModalShow}
                                 FabProps={{
                                     sx: {
                                         color: '#ffffff',
@@ -53,6 +61,21 @@ export default function SpeedDialMenu() {
                     </SpeedDial>
                 </Box>
             </a>
+
+            <Modal show={showModal} onHide={ModalClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={ModalClose}>
+                        testhandleClose
+                    </Button>
+                    <Button variant="primary" onClick={ModalClose}>
+                        Save Changes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }

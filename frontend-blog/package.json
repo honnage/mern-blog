@@ -17,6 +17,7 @@
     "@srexi/purecounterjs": "^1.5.0",
     "@tailwindcss/line-clamp": "^0.4.0",
     "axios": "^0.27.2",
+    "bootstrap": "^5.2.0",
     "bootstrap-next": "^1.0.5",
     "dotenv": "^16.0.1",
     "next": "12.2.1",

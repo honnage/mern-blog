@@ -19,20 +19,26 @@ export default function Blog() {
   return (
     <>
       {items.map((item) => (
-        <div className="col-md-4" data-aos="fade-up" data-aos-delay={100 * (item.id * 1) } key={item.id}>
+        <div
+          className="col-md-4"
+          data-aos="fade-up"
+          data-aos-delay={100 * (item.id * 1)}
+          key={item.id}
+        >
           <div className="about-col">
-            <div className="img" >
+            <div className="img">
               <img
                 src={
                   api.LOCALHOST +
                   item.attributes.cover_image.data.attributes.url
                 }
-                style={{ height: "400px", width: "100%" }}
+                style={{ height: "280px", width: "100%" }}
                 alt="x"
                 className="img-fluid"
               />
             </div>
 
+            <div style={{ height: "40px", width: "100%" }}>
               <h2 className="title">
                 <a href="#">
                   <ReactMarkdown
@@ -41,9 +47,11 @@ export default function Blog() {
                   />
                 </a>
               </h2>
-              <p className="text-truncate">{item.attributes.detail}</p>
             </div>
+
+            <p className="text-truncate">{item.attributes.detail}</p>
           </div>
+        </div>
       ))}
     </>
   );

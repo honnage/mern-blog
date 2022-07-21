@@ -51,7 +51,7 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <Hero api={data}/>
+        <Hero />
         <FeaturedServices />
         <BlogList test={isLoading} />
         <Services />
