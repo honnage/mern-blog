@@ -22,7 +22,7 @@ export default function SpeedDialMenu() {
 
     return (
         <>
-            <a className="btn-custom d-flex align-items-center justify-content-center" >
+            <a className="btn-custom" >
                 <Box sx={{ height: 320, flexGrow: 1 }} color="secondary" >
                     <SpeedDial
                         ariaLabel="SpeedDial controlled open example"

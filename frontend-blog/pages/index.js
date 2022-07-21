@@ -17,8 +17,33 @@ import Team from '../components/section/team/team'
 import Contact from '../components/section/contact/contact'
 import BlogList from '../components/section/blogList/BlogList'
 
+import React, { useEffect, useState } from 'react'
+import Loading from '../components/pagination/loading'
+
+import Header from '../components/layout/Header/header'
+import BackToTop from '../components/buttom/BackToTop'
+import SpeedDialMenu from '../components/buttom/SpeedDialMenu'
+import Footer from '../components/layout/Footer/footer'
 
 export default function Home() {
+  const [data, setData] = useState(null)
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(false);
+      const res = await fetch(
+        'http://localhost:1337/api/section-carousels/?populate=cover_image',
+      );
+      const json = await res.json();
+      setData(json.data);
+      setIsLoading(true);
+      // console.log(json.data)
+      // console.log(isLoading)
+    };
+    fetchData();
+  }, [setData]);
+
   return (
     <>
       <Head>
@@ -26,10 +51,9 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <Hero />
+        <Hero api={data}/>
         <FeaturedServices />
-        <BlogList />
-        {/* <About /> */}
+        <BlogList test={isLoading} />
         <Services />
         <CallToAction />
         <Skills />
@@ -38,7 +62,7 @@ export default function Home() {
         <Clients />
         <Testimonials />
         <Team />
-        <Contact />
+        <Contact msg="msg" />
       </Layout>
 
       <Script src="assets/vendor/purecounter/purecounter.js"></Script>

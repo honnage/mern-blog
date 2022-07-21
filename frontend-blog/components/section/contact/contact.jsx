@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function Contact() {
+export default function Contact(props) {
   return (
     <>
       {/* ======= Contact Section ======= */}
       <section id="contact" className="section-bg">
         <div className="container" data-aos="fade-up">
           <div className="section-header">
-            <h3>Contact Us</h3>
+            <h3>Contact Us {props.msg}</h3>
             <p>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque

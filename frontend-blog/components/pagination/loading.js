@@ -9,7 +9,7 @@ export default function Loading() {
             <div style={{
                 backgroundColor: "#ffffff",
             }}>
-                <div className={styles.container} passHref>
+                <div className={styles.container}>
                     <main className={styles.main}>
                         <TailSpin height="100" width="100" color='blue' ariaLabel='loading' />
                         <br />
