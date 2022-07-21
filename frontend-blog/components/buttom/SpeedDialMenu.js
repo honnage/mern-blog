@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
@@ -9,33 +9,73 @@ import ForumIcon from '@mui/icons-material/Forum';
 import PhoneIcon from '@mui/icons-material/Phone';
 import FacebookIcon from '@mui/icons-material/Facebook';
 
-import Modal from 'react-bootstrap/Modal';
-
-import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-const src = '<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwonderwash.franchise%2F&tabs=timeline&width=280&height=150&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="280" height="150" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>';
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+import { api } from "../../lib/constants"
 
 export default function SpeedDialMenu() {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    {/* ==================================================================== */ }
+    {/* ============================ FACEBOOK ============================== */ }
+    {/* ==================================================================== */ }
     const [showModalFacebook, setModalShowFacebook] = useState(false);
     const ModalFacebookClose = () => setModalShowFacebook(false);
     const ModalFacebookShow = () => setModalShowFacebook(true);
+    const [dataFacebook, setDataFacebook] = useState([]);
+    useEffect(() => {
+        fetch(api.LOCALHOST + "/api/section-contents/1")
+            .then((res) => res.json())
+            .then((result) => {
+                setDataFacebook(result.data);
+            })
+            .catch(function (error) {
+                console.log(error)
+            });
+    }, []);
 
+    {/* ==================================================================== */ }
+    {/* ============================== LINE ================================ */ }
+    {/* ==================================================================== */ }
     const [showModalLine, setModalShowLine] = useState(false);
     const ModalLineClose = () => setModalShowLine(false);
     const ModalLineShow = () => setModalShowLine(true);
+    const [dataLine, setDataLine] = useState([]);
+    useEffect(() => {
+        fetch(api.LOCALHOST + "/api/section-contents/2")
+            .then((res) => res.json())
+            .then((result) => {
+                setDataLine(result.data);
+            })
+            .catch(function (error) {
+                console.log(error)
+            });
+    }, []);
 
+    {/* ==================================================================== */ }
+    {/* ============================== PHONE =============================== */ }
+    {/* ==================================================================== */ }
     const [showModalPhone, setModalShowPhone] = useState(false);
     const ModalPhoneClose = () => setModalShowPhone(false);
     const ModalPhoneShow = () => setModalShowPhone(true);
+    const [dataPhone, setDataPhone] = useState([]);
+    useEffect(() => {
+        fetch(api.LOCALHOST + "/api/section-contents/3")
+            .then((res) => res.json())
+            .then((result) => {
+                setDataPhone(result.data);
+            })
+            .catch(function (error) {
+                console.log(error)
+            });
+    }, []);
 
     const actions = [
         {
@@ -106,14 +146,12 @@ export default function SpeedDialMenu() {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title">
-                    {"Use Google's location service?"}
+                <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' }}>
+                    {dataFacebook.attributes?.title}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        <div
-                            dangerouslySetInnerHTML={{ __html: src }}
-                        />
+                        <ReactMarkdown children={dataFacebook.attributes?.content} rehypePlugins={[rehypeRaw]} />
                     </DialogContentText>
                 </DialogContent>
             </Dialog>
@@ -128,12 +166,12 @@ export default function SpeedDialMenu() {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title">
-                    {"Use Google's location service?"}
+                <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' }}>
+                    {dataLine.attributes?.title}
                 </DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        Line
+                <DialogContent >
+                    <DialogContentText id="alert-dialog-description" >
+                        <ReactMarkdown children={dataLine.attributes?.content} rehypePlugins={[rehypeRaw]} />
                     </DialogContentText>
                 </DialogContent>
             </Dialog>
@@ -148,12 +186,12 @@ export default function SpeedDialMenu() {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title">
-                    {"Use Google's location service?"}
+                <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' }}>
+                    {dataPhone.attributes?.title}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        Phone
+                        <ReactMarkdown children={dataPhone.attributes?.content} rehypePlugins={[rehypeRaw]} />
                     </DialogContentText>
                 </DialogContent>
             </Dialog>
