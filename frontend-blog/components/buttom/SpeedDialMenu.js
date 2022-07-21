@@ -9,24 +9,57 @@ import ForumIcon from '@mui/icons-material/Forum';
 import PhoneIcon from '@mui/icons-material/Phone';
 import FacebookIcon from '@mui/icons-material/Facebook';
 
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
-const actions = [
-    { icon: <FacebookIcon />, name: "FACEBOOK", bgcolor: "#0353a4", bgcollorhover: '#006daa' },
-    { icon: <PhoneIcon />, name: "โทรศัพท์", bgcolor: "#f8961e", bgcollorhover: '#f9c74f' },
-    { icon: "L", name: "LINE", bgcolor: "#3e8914", bgcollorhover: '#3da35d' },
-];
+const src = '<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwonderwash.franchise%2F&tabs=timeline&width=280&height=150&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="280" height="150" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>';
 
 export default function SpeedDialMenu() {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const [showModal, setModalShow] = useState(false);
-    const ModalClose = () => setModalShow(false);
-    const ModalShow = () => setModalShow(true);
+    const [showModalFacebook, setModalShowFacebook] = useState(false);
+    const ModalFacebookClose = () => setModalShowFacebook(false);
+    const ModalFacebookShow = () => setModalShowFacebook(true);
+
+    const [showModalLine, setModalShowLine] = useState(false);
+    const ModalLineClose = () => setModalShowLine(false);
+    const ModalLineShow = () => setModalShowLine(true);
+
+    const [showModalPhone, setModalShowPhone] = useState(false);
+    const ModalPhoneClose = () => setModalShowPhone(false);
+    const ModalPhoneShow = () => setModalShowPhone(true);
+
+    const actions = [
+        {
+            icon: <PhoneIcon />,
+            name: "โทรศัพท์",
+            bgcolor: "#f8961e",
+            bgcollorhover: '#f9c74f',
+            Modal: ModalPhoneShow
+        },
+        {
+            icon: <FacebookIcon />,
+            name: "FACEBOOK",
+            bgcolor: "#0353a4",
+            bgcollorhover: '#006daa',
+            Modal: ModalFacebookShow
+        },
+        {
+            icon: "L",
+            name: "LINE",
+            bgcolor: "#3e8914",
+            bgcollorhover: '#3da35d',
+            Modal: ModalLineShow
+        },
+    ];
 
     return (
         <>
@@ -46,9 +79,11 @@ export default function SpeedDialMenu() {
                                 key={action.name}
                                 icon={action.icon}
                                 tooltipTitle={action.name}
-                                onClick={ModalShow}
+                                onClick={action.Modal}
                                 FabProps={{
                                     sx: {
+                                        width: 50,
+                                        height: 50,
                                         color: '#ffffff',
                                         bgcolor: `${action.bgcolor}`,
                                         '&:hover': {
@@ -62,20 +97,66 @@ export default function SpeedDialMenu() {
                 </Box>
             </a>
 
-            <Modal show={showModal} onHide={ModalClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={ModalClose}>
-                        testhandleClose
-                    </Button>
-                    <Button variant="primary" onClick={ModalClose}>
-                        Save Changes
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+            {/* ==================================================================== */}
+            {/* ======================== MODAL FACEBOOK ============================ */}
+            {/* ==================================================================== */}
+            <Dialog
+                open={showModalFacebook}
+                onClose={ModalFacebookClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">
+                    {"Use Google's location service?"}
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        <div
+                            dangerouslySetInnerHTML={{ __html: src }}
+                        />
+                    </DialogContentText>
+                </DialogContent>
+            </Dialog>
+
+
+            {/* ==================================================================== */}
+            {/* =========================== MODAL LINE ============================= */}
+            {/* ==================================================================== */}
+            <Dialog
+                open={showModalLine}
+                onClose={ModalLineClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">
+                    {"Use Google's location service?"}
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        Line
+                    </DialogContentText>
+                </DialogContent>
+            </Dialog>
+
+
+            {/* ==================================================================== */}
+            {/* =========================== MODAL PHONE ============================ */}
+            {/* ==================================================================== */}
+            <Dialog
+                open={showModalPhone}
+                onClose={ModalPhoneClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">
+                    {"Use Google's location service?"}
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        Phone
+                    </DialogContentText>
+                </DialogContent>
+            </Dialog>
         </>
     )
 }
