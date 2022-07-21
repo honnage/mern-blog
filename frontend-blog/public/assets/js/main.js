@@ -105,8 +105,7 @@
     window.addEventListener('load', toggleBacktotop)
     onscroll(document, toggleBacktotop)
   }
-
-
+  
 
 
   on('click', '.mobile-nav-toggle', function(e) {

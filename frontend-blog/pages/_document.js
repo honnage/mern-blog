@@ -36,11 +36,9 @@ class MyDocument extends Document {
                     {/* <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" /> */}
 
                     <link href="assets/css/style.css" rel="stylesheet" />
-                    <link href="assets/css/custom.css" rel="stylesheet" />
-
                     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
                     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossOrigin="anonymous" referrerpolicy="no-referrer" />
                 </Head>
                 <body>
                     <Main />
@@ -59,8 +57,6 @@ class MyDocument extends Document {
                     <script>
                         AOS.init();
                     </script>
-
-                    
 
                 </body>
             </Html>
